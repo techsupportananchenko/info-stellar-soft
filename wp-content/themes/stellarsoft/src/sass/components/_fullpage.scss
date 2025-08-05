@@ -1,0 +1,119 @@
+body {
+	.fp-init & {
+		// Щоб вимкнути оновлення сторінки свайпом на телефоні
+		overflow: hidden;
+		overscroll-behavior: none;
+		touch-action: none;
+	}
+}
+
+// Оболонка секцій
+[data-fp] {
+	min-height: 100vh;
+
+	.touch & {
+		min-height: calc(var(--vh, 1vh) * 100);
+		@media (max-width: $mobile) {
+			transition: height 0.2s;
+		}
+	}
+
+	.fp-init & {
+		overflow: hidden;
+		position: relative;
+		// Відносно чого позиціонуються секції
+		touch-action: none;
+		// Для того щоб секції не перекривали буллети
+		z-index: 1;
+	}
+}
+
+// Секція
+[data-fp-section] {
+	.fp-switching & {
+		touch-action: none;
+	}
+
+	.fp-init & {
+		bottom: 0;
+		height: 100%;
+		left: 0;
+		overflow: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 100%;
+	}
+
+	// Модифікації
+	.fp-init .slider-mode &,
+	.fp-init .cards-mode & {
+		transition: transform 0.7s cubic-bezier(0.55, 0.085, 0, 0.99) 0s;
+	}
+
+	.fp-init .fade-mode & {
+		transition:
+			opacity 0.5s ease-in-out 0s,
+			visibility 0.5s ease-in-out 0s;
+	}
+}
+
+// Оболонка буллетів
+.fp-bullets {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: toRem(10);
+	justify-content: center;
+	max-height: 100%;
+	position: fixed;
+	right: toRem(40);
+	top: 50%;
+	transform: translate(0, -50%);
+	z-index: 2;
+	@media (max-width: $pc) {
+		right: toRem(20);
+	}
+	@media (max-width: $mobileSmall) {
+		bottom: toRem(20);
+		flex-direction: row;
+		right: 50%;
+		top: auto;
+		transform: translate(50%, 0);
+	}
+
+	// Булет
+	&__fp-bullet {
+		background-color: #100c46;
+		border: toRem(1) solid #fff;
+		border-radius: toRem(10);
+		box-shadow:
+			toRem(0) toRem(0) toRem(3) #6257fe,
+			0 0 toRem(30) rgba(255, 255, 255, 0.8);
+		cursor: pointer;
+		flex: 0 0 toRem(20);
+		height: toRem(20);
+		opacity: 0.6;
+		transition:
+			transform 0.4s ease-in-out 0s,
+			opacity 0.4s ease-in-out 0s,
+			background-color 0.4s ease-in-out 0s,
+			box-shadow 0.4s ease-in-out 0s;
+		width: toRem(20);
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__fp-bullet-active {
+		background-color: #6257fe;
+		box-shadow:
+			toRem(5) toRem(2) toRem(3) #100c46,
+			0 0 toRem(30) rgba(255, 255, 255, 0.8);
+		opacity: 1;
+		transform: translate3D(toRem(-5), toRem(-2), 0);
+	}
+}

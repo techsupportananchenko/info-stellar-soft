@@ -1,0 +1,66 @@
+@use "../global" as *;
+
+h1,
+.h1 {
+	line-height: 130%;
+	font-weight: 500;
+	@include adaptive-value("font-size", 50, 32, 0, 1440, 768);
+	margin: 0;
+}
+
+h2,
+.h2 {
+	font-size: rem(40);
+	@include adaptive-value("font-size", 40, 28, 0, 768, 375);
+	line-height: 110%;
+	font-weight: 400;
+	color: $text-color-light;
+	margin: 0;
+}
+
+h3,
+.h3 {
+	font-size: rem(24);
+	color: $text-color-light;
+	line-height: 140%;
+	font-weight: 400;
+	margin: 0;
+}
+
+p,
+.base-text {
+	color: $text-color-grey;
+	font-size: rem(16);
+	line-height: 160%;
+	margin: 0;
+}
+
+.big-text {
+	@include adaptive-value("font-size", 24, 18, 0, 768, 375);
+	line-height: 140%;
+
+	& > * {
+		@include adaptive-value("font-size", 24, 18, 0, 768, 375);
+		line-height: 140%;
+	}
+}
+
+.small-text {
+	font-size: rem(16);
+	line-height: 120%;
+}
+
+.middle-text {
+	font-size: rem(18);
+	line-height: 160%;
+}
+
+.theme-light {
+	&.base-text {
+		color: $bg-color-grey-light;
+	}
+
+	p {
+		color: $bg-color-grey-light;
+	}
+}

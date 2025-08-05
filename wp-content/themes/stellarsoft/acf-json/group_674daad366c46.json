@@ -1,0 +1,126 @@
+{
+    "key": "group_674daad366c46",
+    "title": "Block : Blog information",
+    "fields": [
+        {
+            "key": "field_674daad3c8b55",
+            "label": "Select the post types",
+            "name": "select_the_post_type",
+            "aria-label": "",
+            "type": "acfe_post_types",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "field_type": "checkbox",
+            "default_value": [],
+            "return_format": "name",
+            "layout": "vertical",
+            "toggle": 0,
+            "allow_custom": 0,
+            "allow_in_bindings": 1,
+            "multiple": 0,
+            "allow_null": 0,
+            "choices": [],
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "search_placeholder": "",
+            "other_choice": 0
+        },
+        {
+            "key": "field_674db852df8b5",
+            "label": "View more button",
+            "name": "view_more_button",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67b370e6378cb",
+            "label": "Additional Css Class",
+            "name": "additional_css_class",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67d966d9f8513",
+            "label": "Display only the author's posts?",
+            "name": "display_only_the_authors_posts",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "Select this option if you only want to display posts by a certain author.",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/blog-information"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1742323680
+}

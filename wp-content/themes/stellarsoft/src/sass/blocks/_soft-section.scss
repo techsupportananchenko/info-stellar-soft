@@ -1,0 +1,121 @@
+@use "../global" as *;
+
+.soft {
+	&__wrap {
+		@include adaptive-value("padding-left", 30, 20, 0, 768, 375);
+		@include adaptive-value("padding-right", 30, 20, 0, 768, 375);
+		@include adaptive-value("padding-top", 80, 60, 0, 768, 375);
+		@include adaptive-value("padding-bottom", 80, 87, 0, 768, 375);
+		@include adaptive-value("border-radius", 20, 25, 0, 768, 375);
+		background-color: $bg-color-white-light;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__title {
+		max-width: rem(670);
+		margin-bottom: rem(25);
+
+		@media (min-width: $desktop) {
+			max-width: rem(600);
+		}
+
+		& > * {
+			color: $bg-color-grey;
+			text-align: center;
+		}
+	}
+
+	&__text {
+		margin-bottom: rem(40);
+		max-width: rem(904);
+
+		& > * {
+			line-height: 160%;
+			text-align: center;
+
+			@media (min-width: $mobile) {
+				line-height: 138%;
+			}
+
+			@media (min-width: $tablet) {
+				line-height: 160%;
+			}
+		}
+	}
+
+	&__btn {
+		max-width: rem(146);
+		width: 100%;
+
+		@media (min-width: $mobile) {
+			max-width: rem(156);
+		}
+	}
+
+	&__btn--btn {
+		padding: rem(19) rem(31);
+	}
+
+	&__bg {
+		position: absolute;
+
+		&--1 {
+			left: rem(-91);
+			bottom: rem(41);
+
+			@media (min-width: $mobile) {
+				left: rem(0);
+				bottom: rem(0);
+			}
+
+			@media (min-width: $desktop) {
+				left: rem(7);
+				bottom: rem(13);
+			}
+		}
+
+		&--2 {
+			right: rem(-145);
+			bottom: rem(25);
+
+			@media (min-width: $mobile) {
+				right: 0;
+				bottom: rem(25);
+			}
+
+			@media (min-width: $desktop) {
+				bottom: rem(40);
+			}
+		}
+
+		&--3 {
+			left: rem(0);
+			display: none;
+
+			@media (min-width: $mobile) {
+				display: block;
+				left: rem(-20);
+				top: rem(98);
+			}
+
+			@media (min-width: $desktop) {
+				left: rem(0);
+			}
+		}
+	}
+}
+
+
+.theme-light {
+	.soft {
+		&__text {
+			p {
+				color: $text-color-light;
+			}
+		}
+	}
+}

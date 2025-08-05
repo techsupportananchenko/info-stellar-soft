@@ -1,0 +1,28 @@
+name: Deploy to Rocket.net via SFTP
+
+on:
+  push:
+    branches:
+      - stage
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy via SFTP
+        uses: appleboy/scp-action@v0.1.6
+        with:
+          debug: true
+          host: ${{ vars.HOST }}
+          username: ${{ vars.USER_NAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          port: ${{ vars.PORT }}
+          source: "./*"
+          target: "/home/stell107/staging.stellar-soft.com"
+          timeout: "600s"
+          command_timeout: "600s"

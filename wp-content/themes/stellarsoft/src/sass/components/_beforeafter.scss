@@ -1,0 +1,55 @@
+[data-ba] {
+	position: relative;
+}
+
+[data-ba-before],
+[data-ba-after] {
+	img {
+		user-select: none;
+	}
+}
+
+[data-ba-before] {
+	img {
+		width: 100%;
+	}
+}
+
+[data-ba-after] {
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50%;
+
+	img {
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+[data-ba-arrow] {
+	cursor: grab;
+	height: 100%;
+	left: 50%;
+	position: absolute;
+	top: 0;
+	width: 0.188rem;
+	z-index: 2;
+
+	&::before,
+	&::after {
+		content: "";
+	}
+
+	&::before {
+		content: "";
+	}
+
+	&::after {
+		content: "";
+	}
+}

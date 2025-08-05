@@ -1,0 +1,1182 @@
+@use "../global" as *;
+
+.theme-light {
+	h2 {
+		color: $bg-color-grey;
+	}
+
+	h3 {
+		color: $bg-color-grey;
+	}
+
+	@media (max-width: $widescreen) {
+		h1 {
+			color: $bg-color-grey;
+		}
+	}
+
+	.header__btn {
+		.new-btn {
+			&:hover {
+				color: #e3e3e3;
+				background-color: #272727 !important;
+			}
+		}
+	}
+
+	.consultation-form__input {
+		-webkit-box-shadow: 0 0 0 30px $white-color inset !important;
+	}
+
+	.header,
+	.wrapper {
+		background-color: $bg-color-white;
+	}
+
+	.checkbox {
+		&__fake {
+			background-color: $white-color;
+			border-color: $bg-color-lite-grey;
+		}
+
+		.checkbox__real:checked + .checkbox__fake {
+			background-color: $white-color;
+			border-color: $text-color-light;
+		}
+	}
+
+	.section-head {
+		&__link {
+			&:hover {
+				.section-head__btn {
+					path {
+						fill: $text-color-light !important;
+					}
+				}
+			}
+		}
+
+		&__btn {
+			path {
+				fill: $bg-color-grey;
+			}
+
+			&:hover {
+				path {
+					fill: $text-color-light !important;
+				}
+			}
+		}
+	}
+
+	.new-btn {
+		&--secondary {
+			&:hover {
+				background-color: $bg-color-grey;
+				color: $text-color-light;
+			}
+		}
+
+		&--tertiary {
+			path {
+				fill: $bg-color-grey;
+			}
+		}
+	}
+
+	.section-title {
+		color: $bg-color-grey;
+	}
+
+	.pagination {
+		&__btn {
+			border-color: $bg-color-grey-light;
+
+			path {
+				fill: $bg-color-grey-light;
+			}
+
+			&:hover {
+				path {
+					fill: $text-color-light;
+				}
+			}
+
+			&.disabled {
+				border-color: $text-color-grey;
+
+				path {
+					fill: $text-color-grey;
+				}
+			}
+		}
+
+		&__item {
+			color: $bg-color-grey-light;
+		}
+
+		&__link {
+			color: $bg-color-grey-light;
+		}
+	}
+
+	.header {
+		&__company {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__logo {
+			svg {
+				path {
+					fill: $bg-accent;
+				}
+
+				circle {
+					fill: $bg-color-white-grey;
+				}
+			}
+		}
+	}
+
+	.nav {
+		background-color: $bg-color-white-grey;
+
+		&__name {
+			color: $bg-color-grey;
+		}
+
+		&__open {
+			span {
+				background-color: $bg-accent;
+			}
+		}
+	}
+
+	.intro-wrap {
+		background-color: $bg-color-grey;
+	}
+
+	.intro {
+		ul,
+		ol {
+			li {
+				color: $text-color-light;
+			}
+		}
+
+		&__title {
+			color: $text-color-light;
+		}
+
+		&__text {
+			color: $text-color-light;
+
+			p {
+				color: $text-color-light;
+			}
+		}
+
+		&__btn {
+			&:hover {
+				background-color: $text-color-light;
+				color: $bg-color-grey;
+			}
+		}
+
+		&__companys-title {
+			color: $text-color-light;
+		}
+
+		&__company {
+			&--dark {
+				display: none;
+			}
+
+			&--light {
+				display: block;
+			}
+		}
+	}
+
+	.services {
+		path {
+			fill: $bg-color-grey;
+		}
+
+		&:hover {
+			.services__wrap {
+				background-color: $bg-color-lite-lite;
+			}
+
+			path {
+				fill: $text-color-light;
+			}
+		}
+
+		&__wrap {
+			background-color: $text-color-light;
+		}
+
+		&__title {
+			color: $bg-color-grey;
+		}
+	}
+
+	.company {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__title {
+			& > * {
+				color: $bg-color-grey;
+			}
+		}
+	}
+
+	.soft {
+		&__wrap {
+			background-color: $bg-color-grey;
+		}
+
+		&__title {
+			& > * {
+				color: $text-color-light;
+			}
+		}
+
+		&__btn {
+			& > * {
+				&:hover {
+					background-color: $text-color-light;
+					color: $bg-color-grey;
+				}
+			}
+		}
+	}
+
+	.technologies {
+		&__title {
+			background-color: $text-color-light;
+			color: $bg-color-grey;
+		}
+	}
+
+	.technologie-cards {
+		&__col {
+			&:last-child {
+				.technologie-card {
+					&__wrap {
+						background-color: $bg-color-grey;
+					}
+
+					&__text {
+						& > * {
+							color: $text-color-light;
+						}
+					}
+				}
+			}
+
+			&:hover {
+				&:last-child {
+					.technologie-card {
+						&__wrap {
+							&:hover {
+								background-color: $text-color-light;
+
+								& > * {
+									& > * {
+										color: $bg-color-grey;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&:hover {
+				.technologie-card {
+					&__wrap {
+						&:hover {
+							background-color: $bg-color-lite-lite;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.technologie-card {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__text {
+			& > * {
+				color: $bg-color-grey;
+			}
+		}
+	}
+
+	.build {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+	}
+
+	.questions {
+		background-color: $bg-color-white-grey;
+	}
+
+	._spoller-init .questions-spollers__title::before {
+		color: $bg-color-grey;
+	}
+
+	._spoller-init .questions-spollers__title._spoller-active::before {
+		color: $text-color-light;
+	}
+
+	.questions-spollers {
+		&__title {
+			background-color: $bg-white-color;
+
+			&--dark {
+				background-color: $bg-color-white-grey;
+			}
+		}
+
+		&__body {
+			background-color: $bg-white-color;
+
+			&--dark {
+				background-color: $bg-color-white-grey;
+			}
+		}
+	}
+
+	.review-slider {
+		.swiper-pagination-bullet {
+			color: $bg-color-grey;
+		}
+
+		.swiper-pagination-bullet-active {
+			color: $bg-accent;
+		}
+	}
+
+	.review-slide {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__autor {
+			&-post {
+				a {
+					color: $bg-accent;
+
+					&:hover {
+						color: $text-color-grey;
+					}
+				}
+			}
+		}
+
+		&__link {
+			&:hover {
+				color: $bg-color-grey;
+			}
+		}
+
+		&__autor {
+			&-post {
+				a {
+					color: $bg-accent;
+
+					&:hover {
+						color: $text-color-grey;
+					}
+				}
+			}
+		}
+	}
+
+	.review-popup {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__body {
+			border-top: rem(1) solid $bg-color-lite-grey;
+			border-bottom: rem(1) solid $bg-color-lite-grey;
+		}
+
+		&__autor {
+			&-name {
+				color: $bg-color-grey;
+			}
+
+			&-post {
+				a {
+					color: $bg-accent;
+
+					&:hover {
+						color: $text-color-grey;
+					}
+				}
+			}
+		}
+
+		&__autor {
+			&-post {
+				a {
+					color: $bg-accent;
+
+					&:hover {
+						color: $text-color-grey;
+					}
+				}
+			}
+		}
+
+		&__technology {
+			color: $bg-color-grey;
+		}
+
+		&__close {
+			background-color: $bg-color-grey-light;
+
+			&:before,
+			&:after {
+				background-color: $text-color-light;
+			}
+		}
+	}
+
+	.works-slider {
+		.swiper-pagination-bullet {
+			color: $bg-color-grey;
+		}
+
+		.swiper-pagination-bullet-active {
+			color: $bg-accent;
+		}
+	}
+
+	.works-slide {
+		&__title {
+			color: $text-color-light;
+		}
+	}
+
+	.consultation {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__title,
+		h3,
+		&__text,
+		&__link {
+			color: $bg-color-grey;
+		}
+
+		&__link {
+			&:hover {
+				color: $bg-accent;
+			}
+		}
+	}
+
+	.consultation-form {
+		border-bottom: rem(1) solid $bg-color-lite-grey;
+
+		@media (min-width: $widescreen) {
+			border-bottom: none;
+		}
+
+		&::after {
+			background-color: #d9d9d9;
+		}
+
+		&__input,
+		&__textarea {
+			background-color: $white-color;
+			border-color: #d9d9d9;
+			color: $bg-color-grey;
+
+			&:focus,
+			&:valid {
+				background-color: $white-color;
+			}
+		}
+
+		&__captcha-text {
+			color: $bg-color-grey;
+		}
+
+		&__btn {
+			&:hover {
+				background-color: $bg-color-grey;
+				color: $text-color-light;
+			}
+		}
+	}
+
+	.footer {
+		&__wrap {
+			background-color: $bg-color-grey;
+		}
+
+		&__title {
+			color: $text-color-light;
+		}
+
+		&__icon {
+			background-color: #333333;
+		}
+
+		&__btn {
+			&:hover {
+				background-color: $text-color-light;
+				color: $bg-color-grey;
+			}
+		}
+
+		&__bottom {
+			border-color: #353535;
+		}
+	}
+
+	.footer-link {
+		&__title {
+			color: $text-color-light;
+		}
+
+		&__item {
+			color: $text-color-light;
+		}
+
+		.nav__menu-link.js-burger-close.js-link-to {
+			color: $text-color-light;
+		}
+	}
+
+	.footer-form {
+		&__input {
+			background-color: $text-color-light;
+		}
+	}
+
+	.review-slide {
+		&__wrap {
+			background-color: #e4e4e4;
+		}
+
+		&__autor-name {
+			color: $bg-color-grey;
+		}
+
+		&__body {
+			border-color: #d9d9d9;
+		}
+
+		&__technology {
+			color: $bg-color-grey;
+		}
+	}
+
+	.theme-btn {
+		&__wrap {
+			background-color: #e4e4e4;
+		}
+
+		&__icon {
+			&--light {
+				display: block;
+				background-image: url("../images/header/dark-theme.svg");
+			}
+
+			&--dark {
+				display: none;
+			}
+		}
+	}
+
+	.what-block {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__counter {
+
+			&:after {
+				background-color: #353535;
+			}
+		}
+
+		&__count {
+			&:after {
+				background-color: #353535;
+			}
+		}
+
+		&__image {
+			&--dark {
+				display: none;
+			}
+
+			&--light {
+				display: block;
+			}
+		}
+	}
+
+	.industry {
+		&__link {
+			background-color: $text-color-light;
+		}
+
+		&__title {
+			color: $bg-color-grey;
+			@media (min-width: $widescreen) {
+				color: $text-color-light;
+			}
+		}
+
+		&__descr {
+			color: $bg-color-grey-light;
+			@media (min-width: $widescreen) {
+				color: $text-color-light;
+			}
+		}
+	}
+
+	.blog-card {
+		&:hover {
+			.blog-card__wrap {
+				background-color: $bg-color-lite-lite;
+			}
+
+			.new-btn {
+				&--tertiary {
+					background-color: $bg-accent;
+					border-color: $bg-accent;
+
+					svg {
+						transform: rotate(45deg);
+
+						path {
+							fill: $white-color;
+						}
+					}
+				}
+			}
+		}
+
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__title {
+			& > * {
+				color: $bg-color-grey;
+			}
+		}
+
+		&__date {
+			&--big {
+				display: flex;
+
+				& > * {
+					color: $bg-color-grey100;
+				}
+			}
+		}
+	}
+
+	.marquee-infinite {
+		&__wrap {
+			&--dark {
+				display: none;
+			}
+
+			&--light {
+				display: flex;
+			}
+		}
+
+		&__item {
+			background-color: $bg-color-white-grey;
+		}
+	}
+
+	.cycle-card {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__number {
+			color: $text-color-grey;
+		}
+
+		&__title {
+			& > * {
+				color: $bg-color-grey;
+			}
+		}
+	}
+
+	.cycle-slider {
+		@media (min-width: $tablet) {
+			background-color: $bg-color-white-grey;
+		}
+
+		.cycle-pagination {
+			@media (min-width: $tablet) {
+				background-color: $bg-white-color;
+				outline-color: $bg-color-white-grey;
+			}
+		}
+
+		.cycle-pagination__item.current .cycle-pagination__text {
+			background-color: $bg-color-white-grey;
+			color: $bg-color-grey;
+		}
+	}
+
+	.review-slide {
+		&__link {
+			color: $bg-accent;
+		}
+	}
+
+	.slider-nav__btn {
+		&.disabled,
+		&.swiper-button-disabled {
+			border: 2px solid $text-color-grey;
+
+			path {
+				fill: $text-color-grey;
+			}
+		}
+
+		path {
+			fill: $bg-color-grey;
+		}
+
+		&:hover {
+			path {
+				fill: $white-color;
+			}
+		}
+	}
+
+	.slider-nav__item,
+	.slider-nav .swiper-pagination-bullet {
+		color: $bg-color-grey;
+
+		&.swiper-pagination-bullet-active {
+			color: $bg-accent;
+		}
+	}
+
+	.case-navigation {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__title {
+			color: $bg-color-grey;
+		}
+
+		&__location-title {
+			color: $bg-color-grey;
+		}
+
+		&__button {
+			background-color: $bg-white-color;
+			color: $bg-color-grey;
+		}
+
+		&__service {
+			& > * {
+				color: $bg-color-grey;
+			}
+		}
+
+		&__link {
+			& > * {
+				color: $bg-accent;
+			}
+
+			&:hover {
+				& > * {
+					color: $bg-color-grey;
+				}
+			}
+		}
+
+		&__btn {
+			background-color: $bg-color-grey;
+
+			svg {
+				path {
+					fill: $bg-color-lite;
+				}
+			}
+		}
+	}
+
+	.case-content {
+		&__title {
+			color: $bg-color-grey;
+		}
+	}
+
+	.case-card {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__name {
+			& > * {
+				color: $bg-color-grey;
+			}
+		}
+	}
+
+	.intro-decor {
+		background-color: $bg-color-white-grey;
+	}
+
+	.case-navigation {
+		&__gradient {
+			&::before {
+				background: linear-gradient(180deg, rgba(228, 228, 228, 0) 0%, rgba(228, 228, 228, 1) 100%);
+			}
+		}
+
+		&__link {
+			text-decoration: underline;
+			text-decoration-color: $bg-accent;
+		}
+
+		&__body {
+			&::-webkit-scrollbar-thumb {
+				background-color: $bg-accent;
+			}
+
+			&::-webkit-scrollbar-track {
+				background-color: $bg-white-color;
+			}
+		}
+	}
+
+	.team-intro-section {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+	}
+
+	.team-intro {
+		&__title {
+			& > * {
+				color: $bg-color-grey;
+
+				@media (min-width: $desktop) {
+					color: $text-color-light;
+				}
+			}
+		}
+	}
+
+	.founder {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__name {
+			color: $bg-color-grey;
+		}
+	}
+
+	.team-expert {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__name {
+			& > * {
+				color: $bg-color-grey;
+			}
+		}
+	}
+
+	.team-award {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__img {
+			&--dark {
+				display: none;
+			}
+
+			&--light {
+				display: flex;
+			}
+		}
+	}
+
+	.blog-information-navigation {
+		&__link {
+			color: $bg-color-grey;
+			@media (min-width: $mobile) {
+				background-color: $text-color-light;
+			}
+		}
+	}
+
+	.blog-main-button {
+		background-color: $text-color-light;
+		color: $bg-color-grey;
+
+		&::before {
+			background-image: url("data:image/svg+xml,%3Csvg width='15' height='16' viewBox='0 0 15 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 7L7.5 10L10.5 7' stroke='%23272727' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
+		}
+	}
+
+	.button-same {
+		@media (min-width: $mobile) {
+			color: $text-color-light;
+		}
+	}
+
+	.blog-information-card {
+		&:hover {
+			.blog-information-card__wrap {
+				background-color: $bg-color-lite-lite;
+			}
+
+			.new-btn {
+				&--tertiary {
+					background-color: $bg-accent;
+					border-color: $bg-accent;
+
+					svg {
+						transform: rotate(45deg);
+
+						path {
+							fill: $white-color;
+						}
+					}
+				}
+			}
+		}
+
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+
+		&__title {
+			& > * {
+				color: $bg-color-grey;
+			}
+		}
+
+
+		&__date {
+			color: $bg-color-grey100;
+		}
+	}
+
+	.blog-intro-section {
+		&__wrap {
+			background-color: $bg-color-white-grey;
+		}
+	}
+
+
+	.case-intro__info {
+		// color: $bg-color-grey;
+
+		&--blak {
+			@media (min-width: $desktop) {
+				// color: $bg-color-grey;
+			}
+		}
+
+		@media (max-width: $widescreen) {
+			color: $bg-color-grey;
+		}
+	}
+
+	.case-intro__text {
+		@media (min-width: $widescreen) {
+			p {
+				color: $text-color-light;
+			}
+		}
+	}
+
+	.blog-main-button {
+		&::before {
+			background-image: url("data:image/svg+xml,%3Csvg width='15' height='16' viewBox='0 0 15 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 7L7.5 10L10.5 7' stroke='%23272727' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+		}
+	}
+
+	.breadcrumbs {
+		a {
+			color: var(--breadcrumbs-color, $text-color-grey);
+
+			&:hover {
+			}
+		}
+
+		//span {
+		//	color: var(--breadcrumbs-color, $bg-color-white);
+		//}
+		&--blog {
+			& a {
+				color: var(--breadcrumbs-color, $text-color-grey);
+			}
+
+			& span {
+				color: var(--breadcrumbs-color, $bg-blue);
+			}
+		}
+	}
+
+	.blog-post-banner {
+		.blog-intro {
+			&__title {
+				& > * {
+					color: $bg-color-grey;
+				}
+			}
+		}
+
+
+	}
+
+}
+
+.theme-dark {
+	.consultation-form__input {
+		color: $white-color;
+		-webkit-box-shadow: 0 0 0 30px #2b2b2b inset !important;
+	}
+
+	.header {
+		&__logo {
+
+		}
+	}
+
+	.intro {
+		&__company {
+			&--dark {
+				display: block;
+			}
+
+			&--light {
+				display: none;
+			}
+		}
+	}
+
+	.theme-btn {
+		&__wrap {
+			background-color: $bg-color-grey;
+		}
+
+		&__icon {
+			&--light {
+				display: none;
+				background-image: url("../images/header/dark-theme.svg");
+			}
+
+			&--dark {
+				display: block;
+				background-image: url("../images/header/light-theme.svg");
+			}
+		}
+	}
+
+	.marquee-infinite {
+		&__wrap {
+			&--dark {
+				display: flex;
+			}
+
+			&--light {
+				display: none;
+			}
+		}
+	}
+
+	.team-award {
+		&__img {
+			&--dark {
+				display: flex;
+			}
+
+			&--light {
+				display: none;
+			}
+		}
+	}
+
+	.what-block {
+		&__image {
+			&--dark {
+				display: block;
+			}
+
+			&--light {
+				display: none;
+			}
+		}
+	}
+
+	.breadcrumbs {
+		a {
+			color: var(--breadcrumbs-color, $text-color-grey);
+		}
+
+		span {
+			color: var(--breadcrumbs-color, $text-color-light);
+		}
+	}
+
+}
+
+/* =Fade out, fade in */
+/* Fade out current container */
+.fade-leave {
+	opacity: 1;
+}
+
+.fade-leave-active {
+	transition: opacity 1s linear;
+}
+
+.fade-leave-to {
+	opacity: 0;
+}
+
+/* Fade in the next container */
+.fade-enter {
+	opacity: 0;
+}
+
+.fade-enter-active {
+	transition: opacity 1s linear;
+}
+
+.fade-enter-to {
+	opacity: 1;
+}
+
