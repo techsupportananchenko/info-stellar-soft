@@ -1,6 +1,0 @@
-{
-  "devDependencies": {
-    "@barba/prefetch": "^2.2.0",
-    "@barba/router": "^2.1.11"
-  }
-}
