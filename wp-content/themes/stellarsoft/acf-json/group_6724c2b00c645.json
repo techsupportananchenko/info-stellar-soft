@@ -1,0 +1,224 @@
+{
+    "key": "group_6724c2b00c645",
+    "title": "CPT : Mega Menu",
+    "fields": [
+        {
+            "key": "field_6728e06f386cb",
+            "label": "Show Mega Menu?",
+            "name": "show_mega_menu",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_673e16ed52629",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "If this option is selected, the link title and its internal content will be displayed in the mega menu view.",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6728d5e1873d9",
+            "label": "Select Menu View",
+            "name": "select_menu_view",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6728e06f386cb",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "mega-menu"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 0,
+            "save_custom": 0,
+            "save_post_status": "publish",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": [],
+            "save_post_type": ""
+        },
+        {
+            "key": "field_673e16ed52629",
+            "label": "Make this link the main link ?",
+            "name": "make_this_link_the_main_link",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6728e06f386cb",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "If this option is selected, the link will lead to the main page of the posts, and there will be no content.",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_67d7c9a313e43",
+            "label": "Add blocks with awards?",
+            "name": "add_blocks_with_awards",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "You can add awards to the mega menu.",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_67d7c9df13e44",
+            "label": "Blocks Awards",
+            "name": "blocks_awards",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67d7c9a313e43",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 1,
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 4,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_67d7ca0f79e56",
+                    "label": "Awards",
+                    "name": "awards",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_67d7c9a313e43",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "uploader": "",
+                    "return_format": "url",
+                    "library": "all",
+                    "acfe_thumbnail": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_67d7c9df13e44"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "2"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1742195547
+}

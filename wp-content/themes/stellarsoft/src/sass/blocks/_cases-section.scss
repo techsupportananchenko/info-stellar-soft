@@ -1,0 +1,174 @@
+@use "../global" as *;
+
+.cases-section {
+	.section-head {
+		&__title {
+			@include adaptive-value("margin-bottom", 30, 20, 0, 768, 375);
+
+			@media (min-width: $widescreen) {
+				margin-bottom: rem(0);
+			}
+		}
+
+		&__text {
+			& > * {
+				@include adaptive-value("font-size", 16, 18, 0, 768, 375);
+			}
+		}
+	}
+
+	.cases {
+		&__navigation {
+			margin-top: rem(30);
+		}
+	}
+
+
+	.cases-item {
+		cursor: pointer;
+
+		&__wrapper {
+			height: rem(470);
+			padding: rem(56) rem(40);
+			position: relative;
+			border-radius: rem(20);
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			z-index: 1;
+
+			&:hover {
+				.cases-item__icon {
+					&--others {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+
+		&__img {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			z-index: -1;
+
+			img {
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&__content {
+			max-width: rem(400);
+			height: 100%;
+		}
+
+
+		&__title {
+			font-size: rem(28);
+			font-weight: 500;
+			text-transform: uppercase;
+			margin-bottom: rem(10);
+		}
+
+
+		&__excerpt {
+			font-size: rem(16);
+			color: $text-color-light;
+			margin-bottom: rem(32);
+		}
+
+		&__technologies {
+			display: flex;
+			align-items: center;
+			gap: rem(10);
+		}
+
+		&__icon {
+			width: rem(50);
+			height: rem(50);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: $bg-color-grey-light;
+			border-radius: 8.33px;
+			transition: all 0.3s ease-in-out;
+
+			&--others {
+				@media (min-width: $tablet) {
+					opacity: 0;
+				}
+			}
+
+			img {
+				width: 28px;
+				height: 28px;
+				object-fit: contain;
+			}
+		}
+
+		&__link {
+			width: rem(165);
+		}
+
+
+		//Styles for slides.
+		&.swiper-slide {
+			position: relative;
+			overflow: hidden;
+			transition: all 0.3s ease-in-out;
+
+
+			&:not(.swiper-slide-active, .swiper-slide-next) {
+				opacity: 0.4;
+
+				&:before {
+					content: '';
+					background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(270deg, rgba(0, 0, 0, 0) -31.87%, #000000 100%);
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 1;
+					opacity: 0.3;
+					border-radius: rem(20);
+				}
+			}
+
+			&.swiper-slide-active, &.swiper-slide-next {
+
+
+				button {
+					background-color: $bg-accent;
+
+					@media (min-width: $mobile) {
+						background-color: initial;
+					}
+				}
+
+
+				@media (min-width: $mobile) {
+					&:hover {
+						button {
+							background-color: $bg-accent;
+						}
+					}
+				}
+
+			}
+
+
+		}
+
+
+	}
+
+}
+
+
+

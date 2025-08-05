@@ -1,0 +1,81 @@
+* {
+	cursor: none !important;
+}
+
+.fls-cursor {
+	height: 100%;
+	left: 0;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+
+	&__shadow {
+		height: toRem(50);
+		position: fixed;
+		transition: all 0.05s linear 0s;
+		width: toRem(50);
+		will-change: transform;
+
+		&::after {
+			animation: rotate 5s infinite linear;
+			border: 3px solid #000;
+			content: "";
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			@keyframes rotate {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				100% {
+					transform: rotate(-360deg);
+				}
+			}
+		}
+	}
+
+	&__pointer {
+		height: toRem(3);
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: toRem(3);
+
+		&::after {
+			border: 3px solid #000;
+			border-radius: 50%;
+			content: "";
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transition: all 0.3s ease 0s;
+			width: 100%;
+		}
+	}
+
+	&._hover {
+		.fls-cursor__pointer::after {
+			transform: scale(0.8);
+		}
+
+		.fls-cursor__shadow::after {
+			content: "";
+		}
+	}
+
+	&._active {
+		.fls-cursor__pointer::after {
+			transform: scale(0.3);
+			transition: all 0.05s ease 0s;
+		}
+
+		.fls-cursor__shadow::after {
+			content: "";
+		}
+	}
+}

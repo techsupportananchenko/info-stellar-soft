@@ -1,0 +1,237 @@
+@use "../global" as *;
+
+.what-block {
+	&__wrap {
+		position: relative;
+		background-color: $bg-color-grey;
+		padding: rem(80) rem(10) rem(110);
+		border-radius: rem(20);
+
+		@media (min-width: $mobile) {
+			padding: rem(100) rem(30) rem(146);
+		}
+
+		@media (min-width: $widescreen) {
+			padding: rem(110) rem(30) rem(78);
+		}
+	}
+
+	&__bg1 {
+		position: absolute;
+		top: rem(14);
+		right: rem(18);
+
+		@media (min-width: $mobile-small) {
+			right: rem(27);
+		}
+
+		@media (min-width: $desktop) {
+			top: rem(15);
+			right: rem(20);
+		}
+	}
+
+	&__bg2 {
+		position: absolute;
+		bottom: rem(79);
+		right: rem(187);
+
+		@media (min-width: $mobile-small) {
+			bottom: rem(124);
+			right: rem(185);
+		}
+
+		@media (min-width: $desktop) {
+			bottom: rem(162);
+		}
+	}
+
+
+	&__head {
+		position: relative;
+		z-index: 1;
+		margin-bottom: rem(40);
+
+		@media (min-width: $mobile) {
+			margin-bottom: rem(60);
+			padding: 0;
+		}
+
+		@media (min-width: $tablet) {
+			margin-bottom: rem(80);
+		}
+
+		.section-head {
+			margin: 0;
+
+			&__title {
+				@media (min-width: $desktop) {
+					max-width: rem(450);
+				}
+			}
+
+			&__text {
+				@media (min-width: $desktop) {
+					max-width: rem(615);
+				}
+			}
+		}
+	}
+
+	&__counter {
+		position: relative;
+		z-index: 1;
+		border-radius: rem(20);
+		display: flex;
+		flex-wrap: wrap;
+		padding: rem(10) 0;
+		margin-bottom: rem(30);
+		justify-content: space-between;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: right bottom;
+
+		@media (min-width: $mobile) {
+			padding: rem(10) rem(19);
+			margin-bottom: rem(40);
+		}
+
+		@media (min-width: $widescreen) {
+			padding: rem(67) rem(40);
+			margin-bottom: rem(60);
+		}
+
+	}
+
+	&__count {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		padding: rem(30) 0;
+		width: 33%;
+
+		&-item {
+			display: flex;
+			align-items: center;
+		}
+
+		@media (min-width: $mobile) {
+			padding: rem(50) 0 rem(48);
+		}
+
+		@media (min-width: $widescreen) {
+			width: calc(100% / 3);
+			padding: 0;
+		}
+
+		&:after {
+			position: absolute;
+			content: "";
+			width: 1px;
+			height: rem(80);
+			background-color: $text-color-light;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+		}
+
+		&:nth-child(3) {
+			&:after {
+				content: none;
+				@media (min-width: $widescreen) {
+					display: block;
+				}
+			}
+		}
+
+	}
+
+	&__count-title {
+		font-size: rem(40);
+		line-height: 120%;
+		color: $bg-accent;
+		font-weight: 600;
+		margin-bottom: rem(10);
+
+		@media (min-width: $mobile) {
+			font-size: rem(60);
+		}
+
+		@media (min-width: $widescreen) {
+			font-size: rem(64);
+			margin-bottom: rem(13);
+		}
+	}
+
+	&__count-text {
+		font-size: rem(16);
+		line-height: 125%;
+		color: $text-color-grey;
+		font-weight: 400;
+		text-align: center;
+
+		@media (min-width: $mobile) {
+			font-size: rem(24);
+		}
+	}
+
+	&__images {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		column-gap: rem(10);
+		row-gap: rem(30);
+		position: relative;
+		z-index: 1;
+
+		@media (min-width: $mobile-extra-small) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: rem(15);
+			grid-column: auto;
+		}
+
+		@media (min-width: $mobile) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: rem(15);
+		}
+
+		@media (min-width: $desktop) {
+			grid-template-columns: repeat(6, 1fr);
+		}
+	}
+
+	&__image {
+		max-width: 100%;
+		padding: rem(7) rem(19) rem(7) 0;
+
+		img {
+			max-width: 100%;
+			object-fit: cover;
+			height: auto;
+		}
+
+		@media (min-width: $tablet) {
+			max-height: rem(73.5);
+		}
+
+		@media (min-width: $mobile-small) {
+			padding: 0;
+		}
+
+		@media (min-width: $mobile) {
+			margin: 0 auto;
+		}
+
+		&--primary {
+			grid-column: 1 / 3;
+			margin: 0;
+			padding: rem(7) rem(113) rem(7) 0;
+
+			@media (min-width: $mobile-small) or (min-width: $mobile-extra-small) {
+				padding: 0;
+				grid-column: auto;
+			}
+
+		}
+	}
+}

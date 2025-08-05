@@ -1,0 +1,45 @@
+@use "../global" as *;
+@use "sass:math";
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	appearance:none;
+}
+
+input:-webkit-autofill {
+	box-shadow:0 0 0 50px $bg-color inset; /* Change the color to your own background color */
+	font-family: $body-font-family;
+	font-size: rem(16);
+	font-weight: 400;
+	-webkit-text-fill-color: $body-main-color;
+}
+
+input:-webkit-autofill:focus {
+	box-shadow: 0 0 0 50px $bg-color inset;
+	font-family: $body-font-family;
+	font-size: rem(16);
+	font-weight: 400;
+	-webkit-text-fill-color: $body-main-color;/*your box-shadow*//*your box-shadow*/
+}
+
+input::placeholder{
+	color: $body-main-color;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	appearance: none;
+	appearance: none;
+	appearance: none;
+	font-family: $body-font-family;
+
+	&:focus,
+	&:focus-visible {
+		outline: none;
+	}
+}

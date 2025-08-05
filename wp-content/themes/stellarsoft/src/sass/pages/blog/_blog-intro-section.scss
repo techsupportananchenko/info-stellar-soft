@@ -1,0 +1,144 @@
+@use "../../global" as *;
+
+.blog-intro-section {
+	padding-top: rem(10);
+
+	@media (min-width: $mobile) {
+		padding-top: rem(20);
+	}
+
+	@media (min-width: $desktop) {
+		padding-top: rem(30);
+	}
+
+	&__wrap {
+		position: relative;
+		background-color: $bg-color-grey-light;
+		border-radius: 2rem;
+	}
+
+	&__bg {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		border-radius: rem(20);
+		overflow: hidden;
+		max-height: rem(500);
+
+		img {
+			@include adaptive-value("min-height", 500, 353, 0, 768, 375);
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: top right;
+		}
+
+		@media (min-width: $desktop) {
+			position: absolute;
+			width: 49.652778%;
+			max-height: 100%;
+			z-index: 1;
+			top: 0;
+			right: 0;
+		}
+	}
+
+	&__breadcrumbs {
+		a {
+			color: $text-color-grey;
+		}
+	}
+
+	&__decor {
+		position: absolute;
+		visibility: hidden;
+
+		@media (min-width: $desktop) {
+			visibility: visible;
+		}
+
+		&--primary {
+			top: 0;
+			left: 42.71%;
+		}
+
+		&--secondary {
+			left: 0;
+			bottom: rem(38);
+		}
+
+		&--tertiary {
+			left: 42%;
+			bottom: rem(58);
+		}
+	}
+}
+
+.blog-intro {
+	@include adaptive-value("padding-top", 40, 30, 0, 768, 375);
+	@include adaptive-value("padding-bottom", 40, 30, 0, 768, 375);
+	display: flex;
+	align-items: center;
+
+	@media (min-width: $desktop) {
+		position: relative;
+		min-height: rem(600);
+	}
+
+	&__body {
+		padding: 0 rem(10);
+
+		@media (min-width: $mobile) {
+			padding: 0 rem(20);
+		}
+
+		@media (min-width: $desktop) {
+			max-width: 43.75%;
+			padding: 0;
+		}
+	}
+
+	&__title {
+		margin-bottom: rem(20);
+
+		& > * {
+			@include adaptive-value("font-size", 40, 32, 0, 1440, 768);
+			color: $text-color-light;
+		}
+	}
+
+	&__btn {
+		width: 100%;
+		height: rem(58);
+
+		@media (min-width: $desktop) {
+			height: rem(54);
+		}
+
+		@media (min-width: $mobile-small) {
+			width: rem(162);
+			display: inline-flex;
+		}
+	}
+
+}
+
+
+.single-post-banner {
+	.blog-intro-section {
+		&__bg {
+			left: 0;
+			width: auto;
+			z-index: 0;
+
+			img {
+				object-position: right;
+				@media (min-width: $mobile) {
+					object-position: center;
+				}
+			}
+		}
+	}
+}
+
+

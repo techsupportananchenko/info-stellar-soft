@@ -1,0 +1,91 @@
+@use 'functions' as *;
+@use 'sass:math';
+/* Fonts
+--------------------------------------------- */
+$fontFamily: 'Geist';
+$main-font-family: 'Geist';
+$second-font-family: '';
+$icon-font-family: 'icomoon';
+$fontSize: rem(16);
+
+// Body
+$body-font-family: $main-font-family;
+$body-font-size: rem(18);
+$body-font-weight: 400;
+$body-font-style: normal;
+$body-line-height: 1;
+
+/* Colors
+--------------------------------------------- */
+// $bg-color: #fff;
+$yellow-color: #dedf49;
+$purple-color: #330036;
+// $white-color: #fff;
+$body-main-color: #000;
+$dark-color: #000;
+$light-gray: #869098;
+$link-color: $yellow-color;
+$link-hover-color: $purple-color;
+$button-color: $yellow-color;
+$button-hover-color: $purple-color;
+$title-color: $purple-color;
+
+/* Colors
+--------------------------------------------- */
+$dark-color: #000;
+$bg-color: #141414;
+$bg-color-white: #ededed;
+$bg-white-color: #f3f3f3;
+$bg-color-white-grey: #e4e4e4;
+$bg-color-white-light: #efefec;
+$text-color-light: #e3e3e3;
+$text-color-grey: #9d9b98;
+$bg-color-grey100: #5c5c5c;
+$bg-color-grey200: #828282;
+$bg-color-grey300: #353535;
+$white-color: #fff;
+$bg-color-grey: #272727;
+$bg-color-grey-light: #333333;
+$bg-accent: #4733ff;
+$bg-color-lite: #d5d5d5;
+$bg-color-lite-grey: #d9d9d9;
+$bg-color-lite-lite: #dfdfdf;
+$error: #eb5444;
+$bg-blue: #0a061a;
+$bg-accent-grey: #312b68;
+
+/* Border radius
+--------------------------------------------- */
+$border-radius: 1rem;
+
+/* Adaptive grid settings
+--------------------------------------------- */
+// Min page width
+$min-width: 375;
+// Width of the canvas (layout)
+$max-width: 1440;
+// Width of bounding container (0 = no bounds)
+$max-width-container: 1680;
+// Total gap of the container
+// (30 = 15px left and right, 0 = no gap)
+$container-padding: 80;
+
+// Trigger width of the first breakpoint
+$container-width: $max-width-container + $container-padding;
+
+/* Breakpoints
+--------------------------------------------- */
+$pc: rem($container-width); // PC
+$widescreen-lg: rem(1439.98); // Widescreen Lg
+$widescreen: rem(1199.98); // Widescreen
+$desktop: rem(1023.98); // Desktop
+$tablet: rem(1023.98); // Tablets horizontal
+$mobile: rem(767.98); // Phone large
+$mobile-small: rem(479.98); // Phone small
+$mobile-extra-small : rem(374.98); //Extra small
+
+/* Responsive type
+--------------------------------------------- */
+// 1 = responsiveness (container has no breakpoints),
+// 2 = at the breakpoint (the container changes its width at the breakpoint)
+$responsive-type: 1;

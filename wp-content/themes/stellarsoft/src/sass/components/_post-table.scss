@@ -1,0 +1,52 @@
+@use "../global" as *;
+
+
+.post-table {
+	overflow: auto;
+	&__item {
+		width: 100%;
+		color: $white-color;
+		border-radius: 20px;
+		overflow: hidden;
+		border-collapse: separate;
+		border-spacing: 1px 0;
+	}
+
+
+	thead {
+		overflow: hidden;
+		background-color: $bg-color-grey-light;
+		border-radius: 20px 20px 0 0;
+
+		tr {
+
+			th {
+				font-size: 1rem;
+				padding: rem(20) rem(15);
+				white-space: nowrap;
+
+			}
+
+		}
+
+	}
+
+	tbody {
+		tr {
+			background-color: #2B2B2B;
+
+			td {
+				font-size: rem(14);
+				padding: rem(30);
+				img{
+					max-width: rem(99);
+				}
+			}
+
+			&:nth-child(2n) {
+				background-color: #222222;
+			}
+		}
+	}
+
+}

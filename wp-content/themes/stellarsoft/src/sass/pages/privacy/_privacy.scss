@@ -1,0 +1,72 @@
+@use "../../global" as *;
+
+.policy {
+	padding: rem(140) 0;
+
+
+	&__wrapper {
+		max-width: rem(900);
+		margin: 0 auto;
+		padding: 0 2rem;
+		@media (min-width: $mobile) {
+			padding: 0;
+		}
+	}
+
+	h1 {
+		color: $text-color-light;
+	}
+
+	h4 {
+		font-size: rem(19);
+		font-weight: 500;
+		color: $text-color-light;
+		margin-top: rem(60);
+		@media (min-width: $mobile) {
+			font-size: rem(24);
+		}
+	}
+
+	.has-text-align-center {
+		text-align: center;
+	}
+
+	.wp-block-group {
+		margin: rem(60) 0;
+	}
+
+	.wp-block-list {
+		padding-left: rem(15);
+	}
+
+	p {
+		margin: rem(20) 0;
+	}
+
+	p, li {
+		line-height: 25.6px;
+		color: $bg-color-grey100;
+		font-size: rem(16);
+	}
+
+	ul li {
+		margin: rem(10) 0;
+		list-style: disc;
+	}
+
+	a {
+		color: $text-color-light;
+		text-decoration: underline;
+	}
+}
+
+.theme-light{
+	.policy{
+		h1,h4{
+			color: $bg-color-grey;
+		}
+		a{
+			color: $bg-accent;
+		}
+	}
+}

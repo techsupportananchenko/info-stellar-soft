@@ -1,0 +1,183 @@
+@use 'variables' as *;
+@use 'functions' as *;
+@use 'sass:math';
+
+//Add fonts
+@mixin font($ffamily: '', $fsize: '', $lh: '', $fweight: '', $fstyle: '') {
+	@if $ffamily != '' {
+		font-family: $ffamily;
+	}
+	@if $fsize != '' {
+		font-size: $fsize;
+	}
+	@if $lh != '' {
+		line-height: $lh;
+	}
+	@if $fweight != '' {
+		font-weight: $fweight;
+	}
+	@if $fstyle != '' {
+		font-style: $fstyle;
+	}
+}
+
+//Paste icon
+@mixin icon($code) {
+	content: '#{$code}';
+	font-family: $icon-font-family;
+}
+
+// Grids
+@mixin grid-cards(
+	$type: fit,
+	$min: 280px,
+	$max: 1fr,
+	$gap: 30px,
+	$columns,
+	$max-height: auto
+) {
+	display: grid;
+	gap: $gap;
+	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+	@if $columns == null {
+		grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+	} @else {
+		grid-template-columns: repeat(#{$columns}, minmax($min, $max));
+	}
+	> * {
+		max-height: $max-height;
+	}
+}
+
+// Position
+@mixin position($pos, $t: false, $r: false, $b: false, $l: false, $z: 1) {
+	position: $pos;
+	@if $z != '' {
+		z-index: $z;
+	}
+	@if $t != false {
+		top: $t;
+	}
+	@if $r != false {
+		right: $r;
+	}
+	@if $b != false {
+		bottom: $b;
+	}
+	@if $l != false {
+		left: $l;
+	}
+}
+
+// Adaptive value
+@mixin adaptive-value(
+	$property,
+	$start-size,
+	$min-size,
+	$keep-size: 0,
+	$width-from: $container-width,
+	$width-to: $min-width
+) {
+	@if ($start-size==0) {
+		$start-size: 0.000001;
+	}
+	@if ($min-size==0) {
+		$min-size: 0.000001;
+	}
+	// for calc();
+	$add-size: math.div($start-size - $min-size, 16);
+	@if ($width-from == $container-width and $max-width-container == 0) {
+		$width-from: $max-width;
+	}
+	// Break points in EM
+	$width-from-media: em($width-from);
+	$width-to-media: em($width-to);
+	// A floating value formula
+	// The source: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+	$slope: math.div(($start-size - $min-size), ($width-from - $width-to));
+	$y-intersection: -$width-to * $slope + $min-size;
+	@if ($y-intersection==0) {
+		$y-intersection: 0.000001;
+	}
+	$fly-value: #{rem($y-intersection)}' + ' #{$slope * 100}vw;
+	// Getting the value of a property
+	$property-value: #{'clamp(' rem($min-size) ',' $fly-value ','
+		rem($start-size) ')'};
+	// If negative values
+	@if ($min-size > $start-size) {
+		$property-value: #{'clamp('
+			rem($start-size)
+			','
+			$fly-value
+			','
+			rem($min-size)
+			')'};
+	}
+	// We set the default value
+	@if $keep-size != 1 and $keep-size != 3 {
+		@media (min-width: $width-from-media) {
+			#{$property}: rem($start-size);
+		}
+	}
+	// We adapt the size in the space between the specified widths of the viewport
+	@media (min-width: $width-to-media) and (max-width: $width-from-media) {
+		// If supported clamp();
+		@supports (#{$property}: $property-value) {
+			#{$property}: $property-value;
+		}
+		// If not supported clamp();
+		@supports not (#{$property}: $property-value) {
+			#{$property}: calc(
+				#{rem($min-size)} + #{$add-size} * (100vw - #{rem($width-to)}) /
+				#{math.div($width-from, 16) - math.div($width-to, 16)}
+			);
+		}
+	}
+	@if $keep-size != 1 and $keep-size != 2 {
+		@media (max-width: $width-to-media) {
+			#{$property}: rem($min-size);
+		}
+	}
+}
+
+
+//The default pop up state.
+@mixin popup-state() {
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	visibility: hidden;
+	pointer-events: none;
+	width: 100vw;
+	height: 100vh;
+	padding: rem(10);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.85);
+	opacity: 0;
+
+	&.popup_show {
+		visibility: visible;
+		pointer-events: auto;
+		opacity: 1;
+	}
+}
+
+
+//Border for menu mobile items
+@mixin mobile-menu-border-item($color, $height, $width, $left,$bottom,$z-index) {
+	&::after {
+		content: '';
+		position: absolute;
+		height: $height;
+		width: $width;
+		background-color: $color;
+		left: $left;
+		bottom: $bottom;
+		z-index: $z-index;
+	}
+}
